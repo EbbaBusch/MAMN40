@@ -6,16 +6,28 @@ import BarcodeScannerExample from './Scanner'
 export default class App extends React.Component {
   render () {
     return (
-      <BarcodeScannerExample></BarcodeScannerExample>
+      <View>
+
+        <View style = {styles.scanner}>
+          <BarcodeScannerExample/>
+        </View>
+
+        <View>
+          <Text style = {styles.text}>Barcode Scanner</Text>
+        </View>
+        
+      </View>
+      
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+  scanner: {
+    height: 200
+  },
+  text: {
+    fontSize: 32,
+    textAlign: 'center'
   }
 })

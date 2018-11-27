@@ -22,12 +22,10 @@ export default class BarcodeScannerExample extends React.Component {
       return <Text>No access to camera</Text>;
     }
     return (
-      <View style={{ flex: 1 }}>
-        <BarCodeScanner
-          onBarCodeScanned={this.handleBarCodeScanned}
-          style={StyleSheet.absoluteFill}
-        />
-      </View>
+      <BarCodeScanner
+        onBarCodeScanned={this.handleBarCodeScanned}
+        style={{flex: 1}}
+      />
     );
   }
 
