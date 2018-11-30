@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
+import { getMoviesFromApi } from './tools/dabasGET'
 
 // import { BarcodeScan } from '../Scanner'
 import BarcodeScannerExample from './Scanner'
@@ -26,7 +27,7 @@ class ScannerScreen extends React.Component {
         </View>
 
         <View>
-          <Text style = {styles.text}>Barcode Scanner</Text>
+          <Text style = {styles.text}>{console.log(function () => this.getMoviesFromApi)}Barcode Scanner</Text>
         </View>
         
       </View>
