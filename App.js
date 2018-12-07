@@ -5,10 +5,10 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
 
 // import { BarcodeScan } from '../Scanner'
 import BarcodeScannerExample from './Scanner'
-import DabasGET from './tools/dabasGET'
+import DabasGET from './components/dabasGET'
 
 class HomeScreen extends React.Component {
-  render () {
+  render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Insights!</Text>
@@ -18,20 +18,31 @@ class HomeScreen extends React.Component {
 }
 
 class ScannerScreen extends React.Component {
-  render () {
+
+  constructor(props) {
+    super(props);
+    this.state = {artNumScanner: null};
+  }
+  myCallback = (artNumFromScanner) => {
+    this.setState({ artNumScanner: artNumFromScanner });
+  }
+
+  render() {
     return (
       <SafeAreaView style={styles.safeArea}>
         <View>
 
           <View style={styles.scanner}>
-            <BarcodeScannerExample />
+            <BarcodeScannerExample callbackFromParent={this.myCallback}/>
           </View>
 
           <View>
-            <Text style={styles.text}>Barcode Scanner</Text>
+            <Text style={styles.text}>{this.state.artNumScanner}</Text>
           </View>
 
-          <View><DabasGET></DabasGET></View>
+          <View>
+            <DabasGET artNum={this.state.artNumScanner} />
+          </View>
 
         </View>
       </SafeAreaView>
@@ -40,7 +51,7 @@ class ScannerScreen extends React.Component {
 }
 
 class SettingsScreen extends React.Component {
-  render () {
+  render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Settings!</Text>

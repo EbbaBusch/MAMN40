@@ -30,6 +30,7 @@ export default class BarcodeScannerExample extends React.Component {
   }
 
   handleBarCodeScanned = ({ type, data }) => {
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    this.props.callbackFromParent(data);
+    //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   }
 }
