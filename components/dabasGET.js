@@ -5,8 +5,10 @@ export default class DabasGet extends Component {
   state = {
     data: ''
   }
-  componentDidMount = () => {
-    fetch('http://api.dabas.com/DABASService/V2/article/gtin/' + this.props.artNum + '/JSON?apikey=e7886b21-bd2f-40e0-b7a1-625967c2679b', {
+
+  render() {
+
+    fetch('http://api.dabas.com/DABASService/V2/article/gtin/0' + this.props.artNum + '/JSON?apikey=e7886b21-bd2f-40e0-b7a1-625967c2679b', {
       method: 'GET'
     })
       .then((response) => response.json())
@@ -19,10 +21,8 @@ export default class DabasGet extends Component {
       .catch((error) => {
         console.error(error);
       });
-  }
-  render() {
     return (
-      <Text>
+      <Text style={{fontSize: 32,textAlign: 'center'}}>
         {this.state.data.Artikelbenamning}
       </Text>
     )
