@@ -16,9 +16,9 @@ export default class DabasGet extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         console.log(responseJson.Artikelbenamning);
-        // this.setState({
-        //   data: responseJson
-        // })
+        this.setState({
+          data: responseJson
+        })
       })
       .catch((error) => {
         console.error(error);
@@ -26,7 +26,7 @@ export default class DabasGet extends Component {
 
       return (
         <Text>
-            {responseJson ? responseJson.Artikelbenamning : "no data"}
+            {this.state.data.Artikelbenamning}
         </Text>
       )
   }
