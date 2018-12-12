@@ -21,7 +21,7 @@ export default class DabasGet extends Component {
         // })
         return (
           <Text>
-            {this.state.data.Artikelbenamning}
+            {responseJson.Artikelbenamning}
           </Text>
         )
       })
