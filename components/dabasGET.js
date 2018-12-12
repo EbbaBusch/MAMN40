@@ -28,5 +28,11 @@ export default class DabasGet extends Component {
       .catch((error) => {
         console.error(error);
       });
+
+      return (
+        <Text>
+            No data
+        </Text>
+      )
   }
 }
