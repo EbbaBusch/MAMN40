@@ -33,9 +33,7 @@ class ScannerScreen extends React.Component {
         <View>
 
           <View style={styles.scanner}>
-          {setTimeout(() => {
             <BarcodeScannerExample callbackFromParent={this.myCallback}/>
-          }, 3000)}
           </View>
 
           <View>
